@@ -57,7 +57,7 @@
      should **NOT** be present in the output.
 
    * If the user specifies 2 arguments and more than 1 is not a valid value for
-     `n` or `m` then the program should fail (exit with non-zero value)
+     `n` or `m` then the program should fail ;) (exit with non-zero value)
 
    * If the user specifies more than 2 arguments then the program should also
      fail.
