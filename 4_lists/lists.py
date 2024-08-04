@@ -1,49 +1,118 @@
 # 1. ASSIGNMENT
 def l_sum(l: list[float]) -> float:
-    return float("inf") # remove this
+    suma = 0
+    for i in range(0, len(l)):
+        suma += l[i]
+    return suma
+    """
+    cislo = 0
+    cislo1 = 0
+    cislo2 = 0
+    for i in range(0, len(l)):
+            cislo = l[i]
+            cislo2 = cislo1 + cislo
+            cislo1 = cislo2
+    return cislo1 
+    """
 
 def l_mul(l: list[float]) -> float:
-    return float("inf") # remove this
+    sucin = 1
+    for i in range(0, len(l)):
+        sucin = sucin * l[i]
+    return sucin
+
+    """
+    cislo = 0
+    cislo1 = 1
+    cislo2 = 1
+    for i in range(0, len(l)):
+        cislo = l[i]
+        cislo2 = cislo1 * cislo
+        cislo1 = cislo2
+    return cislo1 
+    """
 
 
 # 2. ASSIGNMENT
 def is_palindrome(s: str) -> bool:
-    return False # remove this
+    for i in range(0, len(s) // 2):
+        if s[i] != s[len(s) - 1 - i]:
+            return False
+    return True
 
+    """
+    counter = 0
+    for i in range(0, len(s) // 2):
+        counter = counter + int(s[i] != s[len(s) - 1 - i])
+    return counter == 0
+    """
+
+    """
+    # Rovno sa moze vratit pravdivostna hodnota:
+    # return counter == 0
+    if counter > 0:
+         return False
+    else:
+         return True
+    """
 
 # 3. ASSIGNMENT
 def is_sum_of_digits_palindrome(s: str) -> bool:
-    return False # remove this
+    cislo = 0
+    for i in range(0, len(s)):
+        cislo += int(s[i])
+    cislo = str(cislo)
+
+    for i in range (0, len(cislo)//2):
+        if (cislo[i] != cislo[len(cislo)-1-i]):
+            return False
+    return True
 
 
 # 4. ASSIGNMENT
 def remove_spaces(s: str) -> str:
-    return "\0" # remove this
-
+    z = ''
+    for i in range(0, len(s)):
+        if s[i] != ' ':
+            z += (s[i])
+    return z
 
 # 5. ASSIGNMENT
 def distance(x1: float, y1: float, x2: float, y2: float) -> float:
-    return float("inf") # remove this
-
+    dis = (((x1 - x2) ** 2) + ((y1 - y2) ** 2)) ** (1/2)
+    return dis 
 
 # 6. ASSIGNMENT
 def l_max(l: list[float]) -> float:
-    return float("inf") # remove this
+    max = l[0]
+    # Float ma aj 4 necislene hodnoty, inf (nekonecno), -inf (minus nekonecno),
+    # NaN (not a number, invalidne cislo) a -Nan (zaporne invalidne cislo)
+    # Toto by sme pouzili, keby sme chceli spracovat aj prazdny list.
+    # max = -float("inf")
+    for i in range(0, len(l)):
+        if l[i] > max:
+            max = l[i]
+    return max 
 
 def l_min(l: list[float]) -> float:
-    return float("inf") # remove this
+    min = l[0]
+    # min = float("inf")
+    for i in range(0, len(l)):
+        if l[i] < min:
+            min = l[i]
+    return min
 
 def l_avg(l: list[float]) -> float:
-    return float("inf") # remove this
-
+    # if len(l) == 0:
+    #     return float("NaN")
+    return l_sum(l)/len(l)# remove this
 
 # 7. ASSIGNMENT
 def is_sorted(l: list[float]) -> bool:
-    return False # remove this
-
-
-
-
+    for i in range(1, len(l)):
+        if l[i-1] > l[i]:
+            return False
+    return True
 
 
 
@@ -143,6 +212,7 @@ my_assert('l_avg([42, 45, -62, -6, 24, -266, -8, 3]) == -28.5')
 
 my_assert('is_sorted([1, 2, 3]) == True')
 my_assert('is_sorted([2, 2, 2]) == True')
+my_assert('is_sorted([1]) == True')
 my_assert('is_sorted([1, 2, 5, 10, 10000]) == True')
 my_assert('is_sorted([-5, -1, 0, 2, 5, 10]) == True')
 my_assert('is_sorted([-1, -2, 0, 2, 5, 10]) == False')
