@@ -14,7 +14,7 @@
      ```
 
 ## 2. A forrest?
-   Modify the previous program to allow the user specify the 
+   Modify the previous program to allow the user to specify the
    number of layers (`n`) and the number of trees (`m`) from
    the standard input (`stdin`).
 
