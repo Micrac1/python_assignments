@@ -1,45 +1,86 @@
 # 1. ASSIGNMENT
 def l_sum(l: list[float]) -> float:
-    return float('inf')
+    acc = 0
+    for i in l:
+        acc += i
+    return acc
 
 def l_mul(l: list[float]) -> float:
+    acc = 1
+    for i in l:
+        acc *= i
+    return acc
     return float('inf')
 
 
 # 2. ASSIGNMENT
 def is_palindrome(s: str) -> bool:
-    return False
+    for i in range(0, len(s) // 2):
+        if s[i] != s[len(s) - i - 1]:
+            return False
+    return True
 
 
 # 3. ASSIGNMENT
 def is_sum_of_digits_palindrome(s: str) -> bool:
-    return False
+    sum = 0
+    for i in range(0, len(s)):
+        sum += int(s[i])
+    return is_palindrome(str(sum))
 
 
 # 4. ASSIGNMENT
 def remove_spaces(s: str) -> str:
-    return ""
+    left = 0
+    right = 0
+    output = ""
+
+    while right < len(s):
+        if s[right] != ' ':
+            output = output + s[right]
+            left += 1
+        right += 1
+    return output
 
 
 # 5. ASSIGNMENT
 def distance(x1: float, y1: float, x2: float, y2: float) -> float:
-    return float('inf')
+    x = x2 - x1
+    y = y2 - y1
+    ret = abs(x * x + y * y) ** (1/2)
+    return ret
 
 
 # 6. ASSIGNMENT
 def l_max(l: list[float]) -> float:
-    return float('inf')
+    acc = -float("inf")
+    for i in l:
+        if i > acc:
+            acc = i
+    return acc
 
 def l_min(l: list[float]) -> float:
-    return float('inf')
+    acc = float("inf")
+    for i in l:
+        if i < acc:
+            acc = i
+    return acc
 
 def l_avg(l: list[float]) -> float:
-    return float('inf')
+    acc = 0
+    for i in l:
+        acc += i
+    return acc / len(l)
 
 
 # 7. ASSIGNMENT
 def is_sorted(l: list[float]) -> bool:
-    return False
+    prev = -float("inf")
+    for i in l:
+        if prev > i:
+            return False
+        prev = i
+    return True
 
 
 
